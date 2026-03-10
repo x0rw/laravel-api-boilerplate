@@ -123,9 +123,9 @@ return [
 ];
 ```
 
-As I already said before, this boilerplate is based on _dingo/api_ and _tymondesigns/jwt-auth_ packages. So, you can find many informations about configuration <a href="https://github.com/tymondesigns/jwt-auth/wiki/Configuration" target="_blank">here</a> and <a href="https://github.com/dingo/api/wiki/Configuration">here</a>.
+This boilerplate relies on native features provided by laravel,
 
-However, there are some extra options that I placed in a _config/boilerplate.php_ file:
+and, there are some extra options that I placed in a _config/boilerplate.php_ file:
 
 * `sign_up.release_token`: set it to `true` if you want your app release the token right after the sign up process;
 * `reset_password.release_token`: set it to `true` if you want your app release the token right after the password reset process;
@@ -134,7 +134,7 @@ There are also the validation rules for every action (login, sign up, recovery a
 
 ## Creating Endpoints
 
-You can create endpoints in the same way you could to with using the single _dingo/api_ package. You can <a href="https://github.com/dingo/api/wiki/Creating-API-Endpoints" target="_blank">read its documentation</a> for details. After all, that's just a boilerplate! :)
+You can create endpoints using native laravel features _https://laravel.com/docs/12.x/routing_ .
 
 However, I added some example routes to the `routes/api.php` file to give you immediately an idea.
 
