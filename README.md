@@ -14,7 +14,8 @@ Laravel API Boilerplate is a "starter kit" you can use to build your first API i
 It is built on top of three big guys:
 
 * JWT-Auth - [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
-* Dingo API - [api-ecosystem-for-laravel/dingo-api](https://github.com/api-ecosystem-for-laravel/dingo-api)
+<!-- * Dingo API - [api-ecosystem-for-laravel/dingo-api](https://github.com/api-ecosystem-for-laravel/dingo-api) -->
+* Laravel API Resources - Native response transformation and API serialization
 * L5 Swagger [darkaonline/l5-swagger](https://github.com/DarkaOnLine/L5-Swagger)
 
 What I made is really simple: an integration of these three packages and a setup of some authentication and credentials recovery methods.
