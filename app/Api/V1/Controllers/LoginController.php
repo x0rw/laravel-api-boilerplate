@@ -13,16 +13,29 @@ use Tymon\JWTAuth\JWTAuth;
 class LoginController extends Controller
 {
     /**
-     * @OA\Get(
-     *     path="/",
-     *     description="Home page",
-     *
-     *     @OA\Response(response="default", description="Welcome page")
+     * @OA\Post(
+     *     path="/api/v1/auth/login",
+     *     summary="User login",
+     *     tags={"Auth"},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="email", type="string"),
+     *             @OA\Property(property="password", type="string")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Login successful"
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Invalid credentials"
+     *     )
      * )
-     * Log the user in
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
+
     public function login(LoginRequest $request, JWTAuth $JWTAuth)
     {
         $credentials = $request->only(['email', 'password']);
@@ -33,7 +46,6 @@ class LoginController extends Controller
             if (! $token) {
                 throw new AccessDeniedHttpException();
             }
-
         } catch (JWTException $e) {
             throw new HttpException(500);
         }
